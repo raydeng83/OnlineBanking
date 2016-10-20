@@ -16,15 +16,13 @@
                 <form class="form-signin" th:action="@{/index}" method="post">
                     <h2 class="form-signin-heading">Please sign in</h2>
                     <label for="username" class="sr-only">Username</label>
-                    <input type="text" roleId="username" class="form-control" placeholder="Username" name="username"
+                    <input type="text" roleId="username" class="form-control" placeholder="Username" name="username" id="username"
                            required="required" autofocus="autofocus"/>
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" roleId="inputPassword" class="form-control" placeholder="Password"
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" roleId="inputPassword" class="form-control" placeholder="Password" id="password"
                            name="password" required="required"/>
                     <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="remember-me"/> Remember me
-                        </label>
+                        <input type="checkbox" name="remember-me" id="remember-me" />Remember me
                     </div>
                     <button class="btn btn-lg btn-primaryAccount btn-block" type="submit">Sign in</button>
                 </form>
