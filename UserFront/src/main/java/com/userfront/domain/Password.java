@@ -11,7 +11,7 @@ public class Password {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long passwordId;
-    private String password;
+    private String secret;
 
     @OneToOne
     private User user;
@@ -24,12 +24,12 @@ public class Password {
         this.passwordId = passwordId;
     }
 
-    public String getPassword() {
-        return password;
+    public String getSecret() {
+        return secret;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setSecret(String secret) {
+        this.secret = secret;
     }
 
     public User getUser() {
