@@ -1,12 +1,21 @@
 package com.userfront.domain;
 
+import javax.persistence.*;
+
 /**
  * Created by z00382545 on 10/19/16.
  */
+@Entity
 public class Account {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long accountId;
     private int accountNumber;
+
+    @OneToOne
     private Primary primary;
+
+    @OneToOne
     private Savings savings;
 
     public Long getAccountId() {

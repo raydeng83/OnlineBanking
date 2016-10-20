@@ -1,15 +1,24 @@
 package com.userfront.domain;
 
+import javax.persistence.*;
+
 /**
  * Created by z00382545 on 10/19/16.
  */
+
+@Entity
 public class Recipient {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long recipientId;
     private String recipientName;
     private String recipientEmail;
     private String recipientPhone;
     private int recipientAccountNumber;
+
+    @ManyToOne
+    private User user;
 
     public Long getRecipientId() {
         return recipientId;
@@ -49,5 +58,13 @@ public class Recipient {
 
     public void setRecipientAccountNumber(int recipientAccountNumber) {
         this.recipientAccountNumber = recipientAccountNumber;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

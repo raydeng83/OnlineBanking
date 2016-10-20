@@ -1,17 +1,24 @@
 package com.userfront.domain;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by z00382545 on 10/19/16.
  */
-public class ParimaryTransaction {
+@Entity
+public class PrimaryTransaction {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long primaryTransactionId;
     private String primaryTransactionName;
     private Date primaryTransactionDate;
     private String primaryTransactionDescription;
     private String primaryTransactionLocation;
+
+    @ManyToOne
+    private Primary primary;
 
     public Long getPrimaryTransactionId() {
         return primaryTransactionId;
@@ -51,5 +58,13 @@ public class ParimaryTransaction {
 
     public void setPrimaryTransactionLocation(String primaryTransactionLocation) {
         this.primaryTransactionLocation = primaryTransactionLocation;
+    }
+
+    public Primary getPrimary() {
+        return primary;
+    }
+
+    public void setPrimary(Primary primary) {
+        this.primary = primary;
     }
 }
