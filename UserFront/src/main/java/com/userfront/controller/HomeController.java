@@ -27,6 +27,11 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home() {
+        return "redirect:/index";
+    }
+
+    @RequestMapping("/index")
+    public String index() {
         return "index";
     }
 
@@ -56,6 +61,11 @@ public class HomeController {
 
             return "redirect:/";
         }
+    }
+
+    @RequestMapping("/userFront")
+    public String userFront() {
+        return "userFront";
     }
 
     private boolean checkUserNameExists(String username) {

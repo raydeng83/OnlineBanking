@@ -11,10 +11,13 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "userId", nullable = false, updatable = false)
     private Long userId;
     private String userName;
     private String firstName;
     private String lastName;
+
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
     private String phone;
 
