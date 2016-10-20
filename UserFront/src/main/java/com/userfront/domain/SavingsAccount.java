@@ -8,7 +8,7 @@ import java.util.List;
  */
 
 @Entity
-public class Savings {
+public class SavingsAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,7 +18,7 @@ public class Savings {
     @OneToOne
     private Account account;
 
-    @OneToMany(mappedBy = "savings", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "savingsAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<SavingsTransaction> savingsTransactionList;
 
     public Long getSavingsId() {

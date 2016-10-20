@@ -19,7 +19,7 @@ public class SavingsTransaction {
     private String savingsTransactionLocation;
 
     @ManyToOne
-    private Savings savings;
+    private SavingsAccount savingsAccount;
 
     public Long getSavingsTransactionId() {
         return savingsTransactionId;
@@ -61,12 +61,12 @@ public class SavingsTransaction {
         this.savingsTransactionLocation = savingsTransactionLocation;
     }
 
-    public Savings getSavings() {
-        return savings;
+    public SavingsAccount getSavingsAccount() {
+        return savingsAccount;
     }
 
-    public void setSavings(Savings savings) {
-        this.savings = savings;
+    public void setSavingsAccount(SavingsAccount savingsAccount) {
+        this.savingsAccount = savingsAccount;
     }
 
 

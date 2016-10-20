@@ -18,7 +18,7 @@ public class PrimaryTransaction {
     private String primaryTransactionLocation;
 
     @ManyToOne
-    private Primary primary;
+    private PrimaryAccount primaryAccount;
 
     public Long getPrimaryTransactionId() {
         return primaryTransactionId;
@@ -60,11 +60,11 @@ public class PrimaryTransaction {
         this.primaryTransactionLocation = primaryTransactionLocation;
     }
 
-    public Primary getPrimary() {
-        return primary;
+    public PrimaryAccount getPrimaryAccount() {
+        return primaryAccount;
     }
 
-    public void setPrimary(Primary primary) {
-        this.primary = primary;
+    public void setPrimaryAccount(PrimaryAccount primaryAccount) {
+        this.primaryAccount = primaryAccount;
     }
 }

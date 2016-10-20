@@ -13,10 +13,10 @@ public class Account {
     private int accountNumber;
 
     @OneToOne
-    private Primary primary;
+    private PrimaryAccount primaryAccount;
 
     @OneToOne
-    private Savings savings;
+    private SavingsAccount savingsAccount;
 
     public Long getAccountId() {
         return accountId;
@@ -34,19 +34,19 @@ public class Account {
         this.accountNumber = accountNumber;
     }
 
-    public Primary getPrimary() {
-        return primary;
+    public PrimaryAccount getPrimaryAccount() {
+        return primaryAccount;
     }
 
-    public void setPrimary(Primary primary) {
-        this.primary = primary;
+    public void setPrimaryAccount(PrimaryAccount primaryAccount) {
+        this.primaryAccount = primaryAccount;
     }
 
-    public Savings getSavings() {
-        return savings;
+    public SavingsAccount getSavingsAccount() {
+        return savingsAccount;
     }
 
-    public void setSavings(Savings savings) {
-        this.savings = savings;
+    public void setSavingsAccount(SavingsAccount savingsAccount) {
+        this.savingsAccount = savingsAccount;
     }
 }
