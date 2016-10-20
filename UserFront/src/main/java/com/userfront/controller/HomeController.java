@@ -1,16 +1,19 @@
 package com.userfront.controller;
 
-import com.userfront.domain.Password;
+import com.userfront.dao.RoleDao;
 import com.userfront.domain.User;
-import com.userfront.service.PasswordService;
+import com.userfront.domain.security.Role;
+import com.userfront.domain.security.UserRole;
 import com.userfront.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by z00382545 on 10/19/16.
@@ -23,7 +26,7 @@ public class HomeController {
     private UserService userService;
 
     @Autowired
-    private PasswordService passwordService;
+    private RoleDao roleDao;
 
     @RequestMapping("/")
     public String home() {
@@ -38,26 +41,26 @@ public class HomeController {
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public String signup(Model model) {
         User user = new User();
-        Password password = new Password();
 
         model.addAttribute("user", user);
-        model.addAttribute("password", password);
 
         return "signup";
     }
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
-    public String signupPost(@ModelAttribute("user") User user, @ModelAttribute("password") Password password, Model model) {
+    public String signupPost(@ModelAttribute("user") User user,  Model model) {
 
-        if(checkUserNameExists(user.getUserName()) || checkEmailExists(user.getEmail()) ) {
+        if(checkUserNameExists(user.getUsername()) || checkEmailExists(user.getEmail()) ) {
 
-            if (checkUserNameExists(user.getUserName())) model.addAttribute("userNameExists", true);
+            if (checkUserNameExists(user.getUsername())) model.addAttribute("userNameExists", true);
             if (checkEmailExists(user.getEmail())) model.addAttribute("emailExists", true);
 
             return "signup";
         } else {
-            userService.save(user);
-            passwordService.save(password);
+
+            Set<UserRole> userRoles = new HashSet<>();
+            userRoles.add(new UserRole(user, roleDao.findByName("USER")));
+            userService.createUser(user, userRoles);
 
             return "redirect:/";
         }
@@ -69,7 +72,7 @@ public class HomeController {
     }
 
     private boolean checkUserNameExists(String username) {
-        if (null != userService.findByUserName(username)) {
+        if (null != userService.findByUsername(username)) {
             return true;
         }
 

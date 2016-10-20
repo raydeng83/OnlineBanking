@@ -19,6 +19,7 @@ public class SavingsTransaction {
     private String savingsTransactionLocation;
 
     @ManyToOne
+    @JoinColumn(name = "savings_account_id")
     private SavingsAccount savingsAccount;
 
     public Long getSavingsTransactionId() {

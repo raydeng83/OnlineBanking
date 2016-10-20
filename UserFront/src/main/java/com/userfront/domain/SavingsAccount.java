@@ -15,9 +15,6 @@ public class SavingsAccount {
     private Long savingsId;
     private double savingsBalance;
 
-    @OneToOne
-    private Account account;
-
     @OneToMany(mappedBy = "savingsAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<SavingsTransaction> savingsTransactionList;
 
@@ -35,14 +32,6 @@ public class SavingsAccount {
 
     public void setSavingsBalance(double savingsBalance) {
         this.savingsBalance = savingsBalance;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
     }
 
     public List<SavingsTransaction> getSavingsTransactionList() {

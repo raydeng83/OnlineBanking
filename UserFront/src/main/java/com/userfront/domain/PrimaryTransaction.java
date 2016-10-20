@@ -18,6 +18,7 @@ public class PrimaryTransaction {
     private String primaryTransactionLocation;
 
     @ManyToOne
+    @JoinColumn(name = "primary_account_id")
     private PrimaryAccount primaryAccount;
 
     public Long getPrimaryTransactionId() {

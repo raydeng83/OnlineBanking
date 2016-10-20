@@ -3,23 +3,23 @@
 <head th:replace="common/header :: common-header"/>
 <body>
 <!-- Login Section -->
-<section id="intro" class="intro-section">
+<section roleId="intro" class="intro-section">
     <div class="container">
         <div class="row">
             <div class="main-center">
                 <div class="bg-danger" th:if="${param.error}">
-                    Invalid username and password.
+                    Invalid username and secret.
                 </div>
                 <div class="bg-danger" th:if="${param.logout}">
                     You have been logged out.
                 </div>
                 <form class="form-signin" th:action="@{/index}" method="post">
                     <h2 class="form-signin-heading">Please sign in</h2>
-                    <label for="userName" class="sr-only">Username</label>
-                    <input type="text" id="userName" class="form-control" placeholder="Username" name="username"
+                    <label for="username" class="sr-only">Username</label>
+                    <input type="text" roleId="username" class="form-control" placeholder="Username" name="username"
                            required="required" autofocus="autofocus"/>
                     <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                    <input type="password" roleId="inputPassword" class="form-control" placeholder="Password"
                            name="password" required="required"/>
                     <div class="checkbox">
                         <label>

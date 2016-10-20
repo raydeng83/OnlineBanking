@@ -15,9 +15,6 @@ public class PrimaryAccount {
     private Long primaryId;
     private Double primaryNumber;
 
-    @OneToOne
-    private Account account;
-
     @OneToMany(mappedBy = "primaryAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<PrimaryTransaction> primaryTransactionList;
 
@@ -35,14 +32,6 @@ public class PrimaryAccount {
 
     public void setPrimaryNumber(Double primaryNumber) {
         this.primaryNumber = primaryNumber;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
     }
 
     public List<PrimaryTransaction> getPrimaryTransactionList() {

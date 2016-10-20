@@ -17,6 +17,7 @@ public class Appointment {
     private String appointmentDescription;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Long getAppointmentId() {

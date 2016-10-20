@@ -18,6 +18,7 @@ public class Recipient {
     private int recipientAccountNumber;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Long getRecipientId() {

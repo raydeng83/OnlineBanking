@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="common/header :: common-header" />
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <!--<head th:replace="common/header :: navbar" />-->
 <div class="container">
     <div class="row main">
@@ -19,7 +19,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" th:value="${user.firstName}" name="firstName" id="firstname"  placeholder="Enter your first name" required="required"/>
+                            <input type="text" class="form-control" th:value="${user.firstName}" name="firstName" roleId="firstname"  placeholder="Enter your first name" required="required"/>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" th:value="${user.lastName}" name="lastName" id="lastName"  placeholder="Enter your last name" required="required"/>
+                            <input type="text" class="form-control" th:value="${user.lastName}" name="lastName" roleId="lastName"  placeholder="Enter your last name" required="required"/>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" th:value="${user.phone}" name="phone" id="phone"  placeholder="xxx-xxx-xxxx" required="required"/>
+                            <input type="text" class="form-control" th:value="${user.phone}" name="phone" roleId="phone"  placeholder="xxx-xxx-xxxx" required="required"/>
                         </div>
                     </div>
                 </div>
@@ -49,42 +49,42 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" th:value="${user.email}" name="email" id="email"  placeholder="Enter your Email" required="required"/>
+                            <input type="text" class="form-control" th:value="${user.email}" name="email" roleId="email"  placeholder="Enter your Email" required="required"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="userName" class="cols-sm-2 control-label">Username</label><span class="bg-danger pull-right" th:if="${userNameExists}">Username already exists</span>
+                    <label for="username" class="cols-sm-2 control-label">Username</label><span class="bg-danger pull-right" th:if="${userNameExists}">Username already exists</span>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" th:value="${user.userName}" name="userName" id="userName"  placeholder="Enter your Username" required="required"/>
+                            <input type="text" class="form-control" th:value="${user.username}" name="username" roleId="username"  placeholder="Enter your Username" required="required"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="secret" class="cols-sm-2 control-label">Password</label>
+                    <label for="password" class="cols-sm-2 control-label">Password</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" th:value="${password.secret}" name="secret" id="secret"  placeholder="Enter your Password" required="required"/>
+                            <input type="password" class="form-control" th:value="${user.password}" name="password" roleId="password"  placeholder="Enter your Password" required="required"/>
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input id="showPassword" type="checkbox" />Show password
+                                <input roleId="showPassword" type="checkbox" />Show Password
                             </label>
                         </div>
                     </div>
                 </div>
 
                 <!--<div class="form-group">-->
-                    <!--<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>-->
+                    <!--<label for="confirm" class="cols-sm-2 control-label">Confirm Secret</label>-->
                     <!--<div class="cols-sm-10">-->
                         <!--<div class="input-group">-->
                             <!--<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>-->
-                            <!--<input type="secret" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password" required="required"/>-->
+                            <!--<input type="secret" class="form-control" name="confirm" roleId="confirm"  placeholder="Confirm your Secret" required="required"/>-->
                         <!--</div>-->
                     <!--</div>-->
                 <!--</div>-->
