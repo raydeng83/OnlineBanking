@@ -109,4 +109,20 @@ public class User {
     public void setPassword(Password password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", appointmentList=" + appointmentList +
+                ", recipientList=" + recipientList +
+                ", account=" + account +
+                ", password=" + password +
+                '}';
+    }
 }

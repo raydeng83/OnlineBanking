@@ -42,14 +42,36 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
-    public void signupPost(
-            @ModelAttribute("user") User user,
-            BindingResult userResult,
-            @ModelAttribute("password") Password password,
-            BindingResult passwordResult) {
-        userService.save(user);
-        passwordService.save(password);
+    public String signupPost(@ModelAttribute("user") User user, @ModelAttribute("password") Password password, Model model) {
+
+        if(checkUserNameExists(user.getUserName()) || checkEmailExists(user.getEmail()) ) {
+
+            if (checkUserNameExists(user.getUserName())) model.addAttribute("userNameExists", true);
+            if (checkEmailExists(user.getEmail())) model.addAttribute("emailExists", true);
+
+            return "signup";
+        } else {
+            userService.save(user);
+            passwordService.save(password);
+
+            return "redirect:/";
+        }
     }
 
+    private boolean checkUserNameExists(String username) {
+        if (null != userService.findByUserName(username)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean checkEmailExists(String email) {
+        if (null != userService.findByEmail(email)) {
+            return true;
+        }
+
+        return false;
+    }
 
 }
