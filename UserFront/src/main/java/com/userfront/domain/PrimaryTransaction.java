@@ -1,10 +1,8 @@
 package com.userfront.domain;
 
-import org.springframework.context.annotation.Primary;
-
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by z00382545 on 10/19/16.
@@ -20,8 +18,20 @@ public class PrimaryTransaction {
     private String type;
     private String status;
     private double amount;
-    private double availableBalance;
+    private BigDecimal availableBalance;
 
+    public PrimaryTransaction() {}
+
+
+    public PrimaryTransaction(Date date, String description, String type, String status, double amount, BigDecimal availableBalance, PrimaryAccount primaryAccount) {
+        this.date = date;
+        this.description = description;
+        this.type = type;
+        this.status = status;
+        this.amount = amount;
+        this.availableBalance = availableBalance;
+        this.primaryAccount = primaryAccount;
+    }
 
     @ManyToOne
     @JoinColumn(name = "primary_account_id")
@@ -75,11 +85,11 @@ public class PrimaryTransaction {
         this.amount = amount;
     }
 
-    public double getAvailableBalance() {
+    public BigDecimal getAvailableBalance() {
         return availableBalance;
     }
 
-    public void setAvailableBalance(double availableBalance) {
+    public void setAvailableBalance(BigDecimal availableBalance) {
         this.availableBalance = availableBalance;
     }
 

@@ -1,6 +1,7 @@
 package com.userfront.domain;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ public class PrimaryAccount {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long primaryId;
     private int accountNumber;
-    private double accountBalance;
+    private BigDecimal accountBalance;
 
     @OneToMany(mappedBy = "primaryAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<PrimaryTransaction> primaryTransactionList;
@@ -35,11 +36,11 @@ public class PrimaryAccount {
         this.accountNumber = accountNumber;
     }
 
-    public double getAccountBalance() {
+    public BigDecimal getAccountBalance() {
         return accountBalance;
     }
 
-    public void setAccountBalance(double accountBalance) {
+    public void setAccountBalance(BigDecimal accountBalance) {
         this.accountBalance = accountBalance;
     }
 
