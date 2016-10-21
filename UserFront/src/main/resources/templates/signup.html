@@ -19,7 +19,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" th:value="${user.firstName}" name="firstName" roleId="firstname"  placeholder="Enter your first name" required="required"/>
+                            <input type="text" class="form-control" th:value="${user.firstName}" id="firstName" name="firstName" roleId="firstname"  placeholder="Enter your first name" required="required"/>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" th:value="${user.lastName}" name="lastName" roleId="lastName"  placeholder="Enter your last name" required="required"/>
+                            <input type="text" class="form-control" th:value="${user.lastName}" id="lastName" name="lastName" roleId="lastName"  placeholder="Enter your last name" required="required"/>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" th:value="${user.phone}" name="phone" roleId="phone"  placeholder="xxx-xxx-xxxx" required="required"/>
+                            <input type="text" class="form-control" th:value="${user.phone}" id="phone" name="phone" roleId="phone"  placeholder="xxx-xxx-xxxx" required="required"/>
                         </div>
                     </div>
                 </div>
@@ -49,17 +49,17 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" th:value="${user.email}" name="email" roleId="email"  placeholder="Enter your Email" required="required"/>
+                            <input type="text" class="form-control" th:value="${user.email}" id="email" name="email" roleId="email"  placeholder="Enter your Email" required="required"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="username" class="cols-sm-2 control-label">Username</label><span class="bg-danger pull-right" th:if="${userNameExists}">Username already exists</span>
+                    <label for="username" class="cols-sm-2 control-label">Username</label><span class="bg-danger pull-right" th:if="${usernameExists}">Username already exists</span>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" th:value="${user.username}" name="username" roleId="username"  placeholder="Enter your Username" required="required"/>
+                            <input type="text" class="form-control" th:value="${user.username}" id="username" name="username" roleId="username"  placeholder="Enter your Username" required="required"/>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" th:value="${user.password}" name="password" roleId="password"  placeholder="Enter your Password" required="required"/>
+                            <input type="password" class="form-control" th:value="${user.password}" id="password" name="password" roleId="password"  placeholder="Enter your Password" required="required"/>
                         </div>
                         <div class="checkbox">
                             <label>

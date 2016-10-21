@@ -53,10 +53,15 @@ public class HomeController {
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String signupPost(@ModelAttribute("user") User user,  Model model) {
 
-        if(checkUserNameExists(user.getUsername()) || checkEmailExists(user.getEmail()) ) {
+        if(userService.checkUserExists(user.getUsername(), user.getEmail()))  {
 
-            if (checkUserNameExists(user.getUsername())) model.addAttribute("userNameExists", true);
-            if (checkEmailExists(user.getEmail())) model.addAttribute("emailExists", true);
+            if (userService.checkEmailExists(user.getEmail())) {
+                model.addAttribute("emailExists", true);
+            }
+
+            if (userService.checkUsernameExists(user.getUsername())) {
+                model.addAttribute("usernameExists", true);
+            }
 
             return "signup";
         } else {
@@ -74,20 +79,6 @@ public class HomeController {
         return "userFront";
     }
 
-    private boolean checkUserNameExists(String username) {
-        if (null != userService.findByUsername(username)) {
-            return true;
-        }
 
-        return false;
-    }
-
-    private boolean checkEmailExists(String email) {
-        if (null != userService.findByEmail(email)) {
-            return true;
-        }
-
-        return false;
-    }
 
 }

@@ -4,12 +4,9 @@ import com.userfront.dao.PrimaryAccountDao;
 import com.userfront.dao.SavingsAccountDao;
 import com.userfront.domain.PrimaryAccount;
 import com.userfront.domain.SavingsAccount;
-import com.userfront.domain.User;
 import com.userfront.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Random;
 
 /**
  * Created by z00382545 on 10/21/16.
