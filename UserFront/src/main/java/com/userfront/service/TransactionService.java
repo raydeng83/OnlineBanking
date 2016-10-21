@@ -13,4 +13,7 @@ public interface TransactionService {
 
     List<SavingsTransaction> findSavingsTransactionList();
 
+    void savePrimaryDepositTransaction(PrimaryTransaction primaryTransaction);
+
+    void saveSavingsDepositTransaction(SavingsTransaction savingsTransaction);
 }

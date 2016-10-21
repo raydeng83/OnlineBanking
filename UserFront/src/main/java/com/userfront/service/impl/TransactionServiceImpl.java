@@ -30,4 +30,12 @@ public class TransactionServiceImpl implements TransactionService{
     public List<SavingsTransaction> findSavingsTransactionList() {
         return savingsTransactionDao.findAll();
     }
+
+    public void savePrimaryDepositTransaction(PrimaryTransaction primaryTransaction) {
+        primaryTransactionDao.save(primaryTransaction);
+    }
+
+    public void saveSavingsDepositTransaction(SavingsTransaction savingsTransaction) {
+        savingsTransactionDao.save(savingsTransaction);
+    }
 }
