@@ -36,10 +36,6 @@ public class User implements UserDetails{
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Recipient> recipientList;
 
-    @OneToOne
-    private Account account;
-
-
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<UserRole> userRoles = new HashSet<>();
 
@@ -115,14 +111,6 @@ public class User implements UserDetails{
         this.recipientList = recipientList;
     }
 
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -136,14 +124,14 @@ public class User implements UserDetails{
         return "User{" +
                 "userId=" + userId +
                 ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", appointmentList=" + appointmentList +
                 ", recipientList=" + recipientList +
-                ", account=" + account +
-                ", secret=" + password +
+                ", userRoles=" + userRoles +
                 '}';
     }
 
