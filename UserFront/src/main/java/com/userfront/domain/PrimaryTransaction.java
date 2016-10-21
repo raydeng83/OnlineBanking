@@ -1,7 +1,10 @@
 package com.userfront.domain;
 
+import org.springframework.context.annotation.Primary;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by z00382545 on 10/19/16.
@@ -11,54 +14,73 @@ public class PrimaryTransaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long primaryTransactionId;
-    private String primaryTransactionName;
-    private Date primaryTransactionDate;
-    private String primaryTransactionDescription;
-    private String primaryTransactionLocation;
+    private Long id;
+    private Date date;
+    private String description;
+    private String type;
+    private String status;
+    private double amount;
+    private double availableBalance;
+
 
     @ManyToOne
     @JoinColumn(name = "primary_account_id")
     private PrimaryAccount primaryAccount;
 
-    public Long getPrimaryTransactionId() {
-        return primaryTransactionId;
+    public Long getId() {
+        return id;
     }
 
-    public void setPrimaryTransactionId(Long primaryTransactionId) {
-        this.primaryTransactionId = primaryTransactionId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getPrimaryTransactionName() {
-        return primaryTransactionName;
+    public Date getDate() {
+        return date;
     }
 
-    public void setPrimaryTransactionName(String primaryTransactionName) {
-        this.primaryTransactionName = primaryTransactionName;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public Date getPrimaryTransactionDate() {
-        return primaryTransactionDate;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPrimaryTransactionDate(Date primaryTransactionDate) {
-        this.primaryTransactionDate = primaryTransactionDate;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getPrimaryTransactionDescription() {
-        return primaryTransactionDescription;
+    public String getType() {
+        return type;
     }
 
-    public void setPrimaryTransactionDescription(String primaryTransactionDescription) {
-        this.primaryTransactionDescription = primaryTransactionDescription;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getPrimaryTransactionLocation() {
-        return primaryTransactionLocation;
+    public String getStatus() {
+        return status;
     }
 
-    public void setPrimaryTransactionLocation(String primaryTransactionLocation) {
-        this.primaryTransactionLocation = primaryTransactionLocation;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public double getAvailableBalance() {
+        return availableBalance;
+    }
+
+    public void setAvailableBalance(double availableBalance) {
+        this.availableBalance = availableBalance;
     }
 
     public PrimaryAccount getPrimaryAccount() {
@@ -68,4 +90,5 @@ public class PrimaryTransaction {
     public void setPrimaryAccount(PrimaryAccount primaryAccount) {
         this.primaryAccount = primaryAccount;
     }
+
 }

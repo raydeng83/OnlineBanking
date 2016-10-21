@@ -9,13 +9,15 @@
 body, html{
     height: 100%;
     background-repeat: no-repeat;
-    background-color: #d3d3d3;
+    background-color: #f8f8f8;
     font-family: 'Oxygen', sans-serif;
 }
 
 .main{
     margin-top: 70px;
 }
+
+
 
 h1.title {
     font-size: 50px;

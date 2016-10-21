@@ -9,7 +9,7 @@
     <meta name="author" content=""/>
     <title>User Front</title>
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Website Font style -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
@@ -20,7 +20,7 @@
 
     <!-- Custom CSS -->
     <!--<link href="css/scrolling-nav.css" rel="stylesheet" />-->
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet" />
 </head>
 <body>
 <!-- Navigation -->
@@ -34,7 +34,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">User Front</a>
+            <a class="navbar-brand page-scroll" th:href="@{/userFront}">Home</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,25 +45,26 @@
                     <a class="page-scroll" href="#page-top"></a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accounts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><a th:href="@{/account/primaryAccount}">Primary</a></li>
                         <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a th:href="@{/account/savingsAccount}">Savings</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a class="page-scroll" href="#">Menu2</a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transfer <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Between Accounts</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">To Someone Else</a></li>
+                    </ul>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Link</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Me <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a th:href="@{/logout}">Logout</a></li>
                         <li><a href="#">Another action</a></li>
@@ -82,15 +83,15 @@
 
 <div th:fragment="body-bottom-scripts">
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
-    <script src="js/jquery.easing.min.js"></script>
+    <script src="/js/jquery.easing.min.js"></script>
 
     <!--main js-->
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
 </div>
 
 </body>

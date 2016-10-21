@@ -12,54 +12,72 @@ public class SavingsTransaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long savingsTransactionId;
-    private String savingsTransactionName;
-    private Date savingsTransactionDate;
-    private String savingsTransactionDescription;
-    private String savingsTransactionLocation;
+    private Long id;
+    private Date date;
+    private String description;
+    private String type;
+    private String status;
+    private double amount;
+    private double availableBalance;
 
     @ManyToOne
     @JoinColumn(name = "savings_account_id")
     private SavingsAccount savingsAccount;
 
-    public Long getSavingsTransactionId() {
-        return savingsTransactionId;
+    public Long getId() {
+        return id;
     }
 
-    public void setSavingsTransactionId(Long savingsTransactionId) {
-        this.savingsTransactionId = savingsTransactionId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getSavingsTransactionName() {
-        return savingsTransactionName;
+    public Date getDate() {
+        return date;
     }
 
-    public void setSavingsTransactionName(String savingsTransactionName) {
-        this.savingsTransactionName = savingsTransactionName;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public Date getSavingsTransactionDate() {
-        return savingsTransactionDate;
+    public String getDescription() {
+        return description;
     }
 
-    public void setSavingsTransactionDate(Date savingsTransactionDate) {
-        this.savingsTransactionDate = savingsTransactionDate;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getSavingsTransactionDescription() {
-        return savingsTransactionDescription;
+    public String getType() {
+        return type;
     }
 
-    public void setSavingsTransactionDescription(String savingsTransactionDescription) {
-        this.savingsTransactionDescription = savingsTransactionDescription;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getSavingsTransactionLocation() {
-        return savingsTransactionLocation;
+    public String getStatus() {
+        return status;
     }
 
-    public void setSavingsTransactionLocation(String savingsTransactionLocation) {
-        this.savingsTransactionLocation = savingsTransactionLocation;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public double getAvailableBalance() {
+        return availableBalance;
+    }
+
+    public void setAvailableBalance(double availableBalance) {
+        this.availableBalance = availableBalance;
     }
 
     public SavingsAccount getSavingsAccount() {
@@ -69,6 +87,4 @@ public class SavingsTransaction {
     public void setSavingsAccount(SavingsAccount savingsAccount) {
         this.savingsAccount = savingsAccount;
     }
-
-
 }
