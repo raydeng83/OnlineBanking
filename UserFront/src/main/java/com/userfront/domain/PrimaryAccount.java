@@ -13,19 +13,19 @@ public class PrimaryAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long primaryId;
+    private Long id;
     private int accountNumber;
     private BigDecimal accountBalance;
 
     @OneToMany(mappedBy = "primaryAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<PrimaryTransaction> primaryTransactionList;
 
-    public Long getPrimaryId() {
-        return primaryId;
+    public Long getId() {
+        return id;
     }
 
-    public void setPrimaryId(Long primaryId) {
-        this.primaryId = primaryId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getAccountNumber() {
