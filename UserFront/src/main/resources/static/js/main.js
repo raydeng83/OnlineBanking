@@ -20,10 +20,36 @@
             }
         })
     };
+
+    $.transferDisplay = function () {
+        $("#transferFrom").change(function() {
+            if ($("#transferFrom").val() == 'Primary') {
+                $('#transferTo').val('Savings');
+            } else if ($("#transferFrom").val() == 'Savings') {
+                $('#transferTo').val('Primary');
+            }
+        });
+
+        $("#transferTo").change(function() {
+            if ($("#transferTo").val() == 'Primary') {
+                $('#transferFrom').val('Savings');
+            } else if ($("#transferTo").val() == 'Savings') {
+                $('#transferFrom').val('Primary');
+            }
+        });
+    }
+
 }(jQuery));
 
-//Here how to call above plugin from everywhere in your application document body
-$.toggleShowPassword({
-    field: '#secret',
-    control: "#showPassword"
+$(document).ready(function() {
+    $.toggleShowPassword({
+        field: '#password',
+        control: "#showPassword"
+    });
+
+    $.transferDisplay();
 });
+
+
+
+

@@ -48,6 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/signup",
             "/userFront",
             "/account/**",
+            "/transfer/**"
 
     };
 

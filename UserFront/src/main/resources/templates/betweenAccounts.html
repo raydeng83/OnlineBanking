@@ -10,9 +10,9 @@
                 <div class="form-group" >
                     <label for="transferFrom">1. Please select the account you would like to transfer From:</label>
                     <select class="form-control" th:value="${transferFrom}" name="transferFrom" id="transferFrom" required="required">
-                        <option disabled="disabled" selected="selected"> -- select your account -- </option>
-                        <option>Primary</option>
-                        <option>Savings</option>
+                        <option  disabled="disabled" selected="selected"> -- select your account -- </option>
+                        <option value="Primary">Primary</option>
+                        <option value="Savings">Savings</option>
                     </select>
                     <br />
                 </div>
@@ -20,9 +20,9 @@
                 <div class="form-group" >
                     <label for="transferTo">2. Please select the account you would like to transfer To:</label>
                     <select class="form-control" th:value="${transferTo}" name="transferTo" id="transferTo" required="required">
-                        <option disabled="disabled" selected="selected"> -- select your account -- </option>
-                        <option>Primary</option>
-                        <option>Savings</option>
+                        <option  disabled="disabled" selected="selected"> -- select your account -- </option>
+                        <option value="Primary">Primary</option>
+                        <option value="Savings">Savings</option>
                     </select>
                     <br />
                 </div>
