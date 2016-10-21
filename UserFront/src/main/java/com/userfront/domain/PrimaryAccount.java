@@ -14,7 +14,7 @@ public class PrimaryAccount {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long primaryId;
     private int accountNumber;
-    private Double accountBalance;
+    private double accountBalance;
 
     @OneToMany(mappedBy = "primaryAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<PrimaryTransaction> primaryTransactionList;
@@ -35,11 +35,11 @@ public class PrimaryAccount {
         this.accountNumber = accountNumber;
     }
 
-    public Double getAccountBalance() {
+    public double getAccountBalance() {
         return accountBalance;
     }
 
-    public void setAccountBalance(Double accountBalance) {
+    public void setAccountBalance(double accountBalance) {
         this.accountBalance = accountBalance;
     }
 
