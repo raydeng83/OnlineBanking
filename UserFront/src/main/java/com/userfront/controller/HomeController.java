@@ -4,6 +4,7 @@ import com.userfront.dao.RoleDao;
 import com.userfront.domain.User;
 import com.userfront.domain.security.Role;
 import com.userfront.domain.security.UserRole;
+import com.userfront.service.AccountService;
 import com.userfront.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,8 @@ public class HomeController {
 
     @Autowired
     private RoleDao roleDao;
+
+
 
     @RequestMapping("/")
     public String home() {

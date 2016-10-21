@@ -30,6 +30,12 @@ public class User implements UserDetails{
     private String email;
     private String phone;
 
+    @OneToOne
+    private PrimaryAccount primaryAccount;
+
+    @OneToOne
+    private SavingsAccount savingsAccount;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Appointment> appointmentList;
 
@@ -117,6 +123,22 @@ public class User implements UserDetails{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public PrimaryAccount getPrimaryAccount() {
+        return primaryAccount;
+    }
+
+    public void setPrimaryAccount(PrimaryAccount primaryAccount) {
+        this.primaryAccount = primaryAccount;
+    }
+
+    public SavingsAccount getSavingsAccount() {
+        return savingsAccount;
+    }
+
+    public void setSavingsAccount(SavingsAccount savingsAccount) {
+        this.savingsAccount = savingsAccount;
     }
 
     @Override
