@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
-import {CookieService} from 'angular2-cookie/core';
+import {CookieService} from 'angular2-cookie/services/cookies.service';
 
 @Injectable()
 export class UserService {
@@ -10,7 +10,12 @@ export class UserService {
 
   getUsers() {
     let url = "http://localhost:8080/api/user/all";
-    return this.http.get(url);
+    // let headers = new Headers(
+    // {
+    //   'Content-Type': 'application/x-www-form-urlencoded'
+    //   // 'Access-Control-Allow-Credentials' : true
+    // });
+    return this.http.get(url, { withCredentials: true });
   }
 
   getCookie(key: string){

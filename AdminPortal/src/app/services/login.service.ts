@@ -14,8 +14,7 @@ export class LoginService {
     {
       'Content-Type': 'application/x-www-form-urlencoded'
       // 'Access-Control-Allow-Credentials' : true
-    }
-      );
+    });
     return this.http.post(url, params, {headers: headers, withCredentials : true});
   }
 
