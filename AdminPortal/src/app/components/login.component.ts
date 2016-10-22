@@ -18,7 +18,7 @@ export class LoginComponent {
   
   onSubmit() {
   	this.loginService.sendCredential(this.username, this.password).subscribe();
-  	console.log(this.cookieService.getAll());
+  	console.log(this.cookieService.getAll()  );
   }
 
   getCookie(key: string){

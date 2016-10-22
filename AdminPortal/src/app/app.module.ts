@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home.component';
 import { LoginComponent } from './components/login.component';
 import { BannerComponent } from './components/banner.component';
+import { NavbarComponent } from './components/navbar.component';
 
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { LoginService } from './services/login.service';
@@ -18,7 +19,8 @@ import { UserService } from './services/user.service';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    BannerComponent
+    BannerComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
