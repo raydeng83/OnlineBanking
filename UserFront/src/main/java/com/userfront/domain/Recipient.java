@@ -15,7 +15,7 @@ public class Recipient {
     private String name;
     private String email;
     private String phone;
-    private int accountNumber;
+    private String accountNumber;
     private String description;
 
     @ManyToOne
@@ -54,11 +54,11 @@ public class Recipient {
         this.phone = phone;
     }
 
-    public int getAccountNumber() {
+    public String getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(int accountNumber) {
+    public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
 
