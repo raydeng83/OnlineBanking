@@ -7,14 +7,16 @@ import { routing }  from './app.routing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home.component';
 import { LoginComponent } from './components/login.component';
-import { NavbarComponent } from './components/navbar.component';
+import { BannerComponent } from './components/banner.component';
+
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    NavbarComponent
+    BannerComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,9 @@ import { NavbarComponent } from './components/navbar.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

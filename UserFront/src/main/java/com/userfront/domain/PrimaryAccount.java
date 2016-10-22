@@ -1,5 +1,7 @@
 package com.userfront.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
@@ -18,6 +20,7 @@ public class PrimaryAccount {
     private BigDecimal accountBalance;
 
     @OneToMany(mappedBy = "primaryAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<PrimaryTransaction> primaryTransactionList;
 
     public Long getId() {

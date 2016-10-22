@@ -3,6 +3,7 @@ package com.userfront.service;
 import com.userfront.domain.User;
 import com.userfront.domain.security.UserRole;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -21,4 +22,6 @@ public interface UserService {
     boolean checkUsernameExists(String username);
 
     boolean checkEmailExists(String email);
+
+    List<User> findUserList();
 }

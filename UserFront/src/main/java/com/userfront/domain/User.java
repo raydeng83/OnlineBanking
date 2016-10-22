@@ -1,5 +1,6 @@
 package com.userfront.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.userfront.domain.security.Authority;
 import com.userfront.domain.security.UserRole;
 import org.springframework.security.core.GrantedAuthority;
@@ -37,12 +38,14 @@ public class User implements UserDetails{
     private SavingsAccount savingsAccount;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Appointment> appointmentList;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Recipient> recipientList;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
     private Set<UserRole> userRoles = new HashSet<>();
 
     public Set<UserRole> getUserRoles() {
