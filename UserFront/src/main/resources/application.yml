@@ -1,7 +1,0 @@
-cors: #By default CORS are not enabled. Uncomment to enable.
-  allowed-origins: "*"
-  allowed-methods: GET, PUT, POST, DELETE, OPTIONS
-  allowed-headers: "*"
-  exposed-headers:
-  allow-credentials: true
-  max-age: 1800
