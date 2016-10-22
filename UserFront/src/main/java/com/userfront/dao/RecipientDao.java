@@ -10,4 +10,6 @@ import java.util.List;
  */
 public interface RecipientDao extends CrudRepository<Recipient, Long> {
     List<Recipient> findAll();
+
+    Recipient findByName(String recipientName);
 }

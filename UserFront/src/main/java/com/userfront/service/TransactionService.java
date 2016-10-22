@@ -2,6 +2,7 @@ package com.userfront.service;
 
 import com.userfront.domain.*;
 
+import java.security.Principal;
 import java.util.List;
 
 /**
@@ -18,7 +19,9 @@ public interface TransactionService {
 
     void betweenAccountsTransfer(String transferFrom, String transferTo, String amount, PrimaryAccount primaryAccount, SavingsAccount savingsAccount) throws Exception;
 
-    List<Recipient> findRecipientList();
+    List<Recipient> findRecipientList(Principal principal);
 
-    Recipient createRecipient(Recipient recipient);
+    Recipient saveRecipient(Recipient recipient);
+
+    Recipient findRecipientByName(String recipientName);
 }

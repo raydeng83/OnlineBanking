@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.security.Principal;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by z00382545 on 10/20/16.
@@ -74,12 +76,21 @@ public class TransactionServiceImpl implements TransactionService{
         }
     }
 
-    public List<Recipient> findRecipientList() {
-        return recipientDao.findAll();
+    public List<Recipient> findRecipientList(Principal principal) {
+        String username = principal.getName();
+        List<Recipient> recipientList = recipientDao.findAll().stream() 			//convert list to stream
+                .filter(recipient -> username.equals(recipient.getUser().getUsername()))	//filters the line, equals to username
+                .collect(Collectors.toList());
+
+        return recipientList;
     }
 
-    public Recipient createRecipient(Recipient recipient) {
+    public Recipient saveRecipient(Recipient recipient) {
         return recipientDao.save(recipient);
+    }
+
+    public Recipient findRecipientByName(String recipientName) {
+        return recipientDao.findByName(recipientName);
     }
 
 
