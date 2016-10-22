@@ -59,6 +59,7 @@
                     <th>Recipient Phone</th>
                     <th>Recipient Account Number</th>
                     <th>Description</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -68,6 +69,7 @@
                     <td data-th-text="${eachRecipient.phone}">...</td>
                     <td data-th-text="${eachRecipient.accountNumber}">...</td>
                     <td data-th-text="${eachRecipient.description}">...</td>
+                    <td><a th:href="@{/transfer/recipient/delete?recipientName=}+${eachRecipient.name}">delete</a></td>
                 </tr>
                 </tbody>
             </table>

@@ -24,4 +24,6 @@ public interface TransactionService {
     Recipient saveRecipient(Recipient recipient);
 
     Recipient findRecipientByName(String recipientName);
+
+    void deleteRecipientByName(String recipientName);
 }
