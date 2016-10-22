@@ -11,54 +11,55 @@ public class Recipient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long recipientId;
-    private String recipientName;
-    private String recipientEmail;
-    private String recipientPhone;
-    private int recipientAccountNumber;
+    private Long id;
+    private String name;
+    private String email;
+    private String phone;
+    private int accountNumber;
+    private String description;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Long getRecipientId() {
-        return recipientId;
+    public Long getId() {
+        return id;
     }
 
-    public void setRecipientId(Long recipientId) {
-        this.recipientId = recipientId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getRecipientName() {
-        return recipientName;
+    public String getName() {
+        return name;
     }
 
-    public void setRecipientName(String recipientName) {
-        this.recipientName = recipientName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getRecipientEmail() {
-        return recipientEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setRecipientEmail(String recipientEmail) {
-        this.recipientEmail = recipientEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getRecipientPhone() {
-        return recipientPhone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setRecipientPhone(String recipientPhone) {
-        this.recipientPhone = recipientPhone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public int getRecipientAccountNumber() {
-        return recipientAccountNumber;
+    public int getAccountNumber() {
+        return accountNumber;
     }
 
-    public void setRecipientAccountNumber(int recipientAccountNumber) {
-        this.recipientAccountNumber = recipientAccountNumber;
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
     public User getUser() {
@@ -67,5 +68,13 @@ public class Recipient {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

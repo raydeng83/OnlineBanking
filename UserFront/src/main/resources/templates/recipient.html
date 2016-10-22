@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: common-header"/>
+<body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<head th:replace="common/header :: navbar"/>
+<div class="container main">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Recipient Information</h3>
+            <form th:action="@{/transfer/recipient/add}" method="post">
+                <div class="form-group">
+                    <label for="recipientName">Name</label>
+                    <input type="text" class="form-control" th:value="${newRecipient.name}" name="name" id="recipientName" placeholder="Name"/>
+                </div>
+                <div class="form-group">
+                    <label for="recipientEmail">Email</label>
+                    <input type="email" class="form-control" th:value="${newRecipient.email}" name="email" id="recipientEmail" placeholder="Email"/>
+                </div>
+                <div class="form-group">
+                    <label for="recipientPhone">Phone</label>
+                    <input type="text" class="form-control" th:value="${newRecipient.phone}" name="phone" id="recipientPhone" placeholder="Phone"/>
+                </div>
+                <div class="form-group">
+                    <label for="recipientAccountNumber">Account Number</label>
+                    <input type="text" class="form-control" th:value="${newRecipient.accountNumber}" name="accountNumber" id="recipientAccountNumber" placeholder="Account Number"/>
+                </div>
+                <div class="form-group">
+                    <label for="recipientDescription">Description</label>
+                    <textarea class="form-control" th:value="${newRecipient.description}" name="description" id="recipientDescription" placeholder="Description"></textarea>
+                </div>
+
+                <input type="hidden"
+                       name="${_csrf.parameterName}"
+                       value="${_csrf.token}"/>
+
+                <button class="btn btn-primary" type="submit">Add Recipient</button>
+            </form>
+
+            <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <h3>List of Recipients</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>Recipient Name</th>
+                    <th>Recipient Email</th>
+                    <th>Recipient Phone</th>
+                    <th>Recipient Account Number</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-th-each="recipient : ${recipientList}">
+                    <td data-th-text="${recipient.name}">...</td>
+                    <td data-th-text="${recipient.email}">...</td>
+                    <td data-th-text="${recipient.phone}">...</td>
+                    <td data-th-text="${recipient.accountNumber}">...</td>
+                    <td data-th-text="${recipient.description}">...</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="common/header :: body-bottom-scripts"/>
+
+</body>
+</html>

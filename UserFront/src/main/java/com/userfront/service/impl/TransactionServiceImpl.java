@@ -1,13 +1,7 @@
 package com.userfront.service.impl;
 
-import com.userfront.dao.PrimaryAccountDao;
-import com.userfront.dao.PrimaryTransactionDao;
-import com.userfront.dao.SavingsAccountDao;
-import com.userfront.dao.SavingsTransactionDao;
-import com.userfront.domain.PrimaryAccount;
-import com.userfront.domain.PrimaryTransaction;
-import com.userfront.domain.SavingsAccount;
-import com.userfront.domain.SavingsTransaction;
+import com.userfront.dao.*;
+import com.userfront.domain.*;
 import com.userfront.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +28,9 @@ public class TransactionServiceImpl implements TransactionService{
 
     @Autowired
     private SavingsAccountDao savingsAccountDao;
+
+    @Autowired
+    private RecipientDao recipientDao;
 
     public List<PrimaryTransaction> findPrimaryTransactionList(){
         return primaryTransactionDao.findAll();
@@ -75,6 +72,14 @@ public class TransactionServiceImpl implements TransactionService{
         } else {
             throw new Exception("Invalid Transfer");
         }
+    }
+
+    public List<Recipient> findRecipientList() {
+        return recipientDao.findAll();
+    }
+
+    public Recipient createRecipient(Recipient recipient) {
+        return recipientDao.save(recipient);
     }
 
 

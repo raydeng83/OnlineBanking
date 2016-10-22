@@ -1,6 +1,7 @@
 package com.userfront.controller;
 
 import com.userfront.domain.PrimaryAccount;
+import com.userfront.domain.Recipient;
 import com.userfront.domain.SavingsAccount;
 import com.userfront.domain.User;
 import com.userfront.service.TransactionService;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.security.Principal;
+import java.util.List;
 
 /**
  * Created by z00382545 on 10/21/16.
@@ -50,5 +52,25 @@ public class TransferController {
         transactionService.betweenAccountsTransfer(transferFrom, transferTo, amount, primaryAccount, savingsAccount);
 
         return "redirect:/userFront";
+    }
+
+    @RequestMapping(value = "/recipient", method = RequestMethod.GET)
+    public String recipient(Model model) {
+        List<Recipient> recipientList = transactionService.findRecipientList();
+
+        Recipient newRecipient = new Recipient();
+
+        model.addAttribute("recipientList", recipientList);
+        model.addAttribute("newRecipient", newRecipient);
+
+        return "recipient";
+    }
+
+    @RequestMapping(value = "/recipient/add", method = RequestMethod.POST)
+    public String recipientPost(@ModelAttribute("newRecipient") Recipient recipient) {
+
+        transactionService.createRecipient(recipient);
+
+        return "redirect:/transfer/recipient";
     }
 }
