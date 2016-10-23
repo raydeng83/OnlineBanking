@@ -18,6 +18,11 @@ export class LoginService {
     return this.http.post(url, params, {headers: headers, withCredentials : true});
   }
 
+  logout() {
+     let url = "http://localhost:8080/logout";
+     return this.http.get(url, { withCredentials: true });
+   }
+
   // sendToken(token) {
   //   let tokenUrl2 = "http://localhost:8080/rest/user/users";
   //   console.log('Bearer '+token);

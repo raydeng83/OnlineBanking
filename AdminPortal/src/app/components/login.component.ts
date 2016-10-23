@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {Observable}  from 'rxjs/Observable';
 import {LoginService} from '../services/login.service';
-import {CookieService} from 'angular2-cookie/core';
 
 
 @Component({
@@ -11,17 +10,26 @@ import {CookieService} from 'angular2-cookie/core';
 })
 export class LoginComponent {
 
-	constructor (private loginService: LoginService, private cookieService: CookieService) {}
+  loggedIn: boolean;
+  username: string;
+  password: string;
 
-	username: string;
-	password: string;
+	constructor (private loginService: LoginService) {
+    if(localStorage.getItem('PortalAdminHasLoggedIn') == '') {
+      this.loggedIn = false;
+    } else {
+      this.loggedIn = true;
+    }
+  }
   
   onSubmit() {
-  	this.loginService.sendCredential(this.username, this.password).subscribe();
-  	console.log(this.cookieService.getAll()  );
-  }
-
-  getCookie(key: string){
-    return this.cookieService.get(key);
+  	this.loginService.sendCredential(this.username, this.password).subscribe(
+      res => {
+        this.loggedIn=true;
+        localStorage.setItem('PortalAdminHasLoggedIn', 'true');
+        location.reload();
+      },
+      err => console.log(err)
+    );
   }
 }
