@@ -11,6 +11,7 @@ import { BannerComponent } from './components/banner.component';
 import { NavbarComponent } from './components/navbar.component';
 import { UserAccountComponent } from './components/userAccount.component';
 import { PrimaryTransactionComponent } from './components/primaryTransaction.component';
+import { SavingsTransactionComponent } from './components/savingsTransaction.component';
 
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { LoginService } from './services/login.service';
@@ -24,7 +25,8 @@ import { UserService } from './services/user.service';
     BannerComponent,
     NavbarComponent,
     UserAccountComponent,
-    PrimaryTransactionComponent
+    PrimaryTransactionComponent,
+    SavingsTransactionComponent
   ],
   imports: [
     BrowserModule,

@@ -30,5 +30,9 @@ export class UserAccountComponent{
     	this.router.navigate(['/primaryTransaction', username]);
   	}	
 
+  	onSelectSavings(username: string) {
+    	this.router.navigate(['/savingsTransaction', username]);
+  	}	
+
 
 }

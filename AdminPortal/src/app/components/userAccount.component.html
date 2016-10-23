@@ -20,8 +20,8 @@
 			<td>{{user.lastName}}</td>
 			<td>{{user.email}}</td>
 			<td>{{user.phone}}</td>
-			<td><a (click)="onSelectPrimary(user.username)">{{user.primaryAccount.accountBalance}}</a></td>
-			<td (click)="onSelectSavings(user.username)">{{user.savingsAccount.accountBalance}}</td>
+			<td><a (click)="onSelectPrimary(user.username)" style="cursor: pointer;">{{user.primaryAccount.accountBalance}}</a></td>
+			<td><a (click)="onSelectSavings(user.username)" style="cursor: pointer;">{{user.savingsAccount.accountBalance}}</a></td>
 		</tr>
 	</tbody>
 </table>   
