@@ -33,7 +33,7 @@ public class AccountController {
 
     @RequestMapping("/primaryAccount")
     public String primaryAccount(Model model, Principal principal) {
-        List<PrimaryTransaction> primaryTransactionList = transactionService.findPrimaryTransactionList();
+        List<PrimaryTransaction> primaryTransactionList = transactionService.findPrimaryTransactionList(principal.getName());
 
         User user = userService.findByUsername(principal.getName());
         PrimaryAccount primaryAccount = user.getPrimaryAccount();
@@ -46,7 +46,7 @@ public class AccountController {
 
     @RequestMapping("/savingsAccount")
     public String savingsAccount(Model model, Principal principal) {
-        List<SavingsTransaction> savingsTransactionList = transactionService.findSavingsTransactionList();
+        List<SavingsTransaction> savingsTransactionList = transactionService.findSavingsTransactionList(principal.getName());
         User user = userService.findByUsername(principal.getName());
         SavingsAccount savingsAccount = user.getSavingsAccount();
 

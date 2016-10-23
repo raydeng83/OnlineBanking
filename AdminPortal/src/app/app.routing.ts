@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent }  from './components/home.component';
 import { LoginComponent } from './components/login.component';
+import { UserAccountComponent } from './components/userAccount.component';
 
 const appRoutes: Routes = [
   {
@@ -11,8 +12,8 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    component: HomeComponent
+    path: 'userAccount',
+    component: UserAccountComponent
   },
   {
   	path: 'login',

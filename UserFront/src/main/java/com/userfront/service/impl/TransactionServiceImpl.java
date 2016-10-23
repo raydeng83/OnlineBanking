@@ -3,6 +3,7 @@ package com.userfront.service.impl;
 import com.userfront.dao.*;
 import com.userfront.domain.*;
 import com.userfront.service.TransactionService;
+import com.userfront.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,12 +35,21 @@ public class TransactionServiceImpl implements TransactionService{
     @Autowired
     private RecipientDao recipientDao;
 
-    public List<PrimaryTransaction> findPrimaryTransactionList(){
-        return primaryTransactionDao.findAll();
+    @Autowired
+    private UserService userService;
+
+    public List<PrimaryTransaction> findPrimaryTransactionList(String username){
+        User user = userService.findByUsername(username);
+        List<PrimaryTransaction> primaryTransactionList = user.getPrimaryAccount().getPrimaryTransactionList();
+
+        return primaryTransactionList;
     }
 
-    public List<SavingsTransaction> findSavingsTransactionList() {
-        return savingsTransactionDao.findAll();
+    public List<SavingsTransaction> findSavingsTransactionList(String username) {
+        User user = userService.findByUsername(username);
+        List<SavingsTransaction> savingsTransactionList = user.getSavingsAccount().getSavingsTransactionList();
+
+        return savingsTransactionList;
     }
 
     public void savePrimaryDepositTransaction(PrimaryTransaction primaryTransaction) {

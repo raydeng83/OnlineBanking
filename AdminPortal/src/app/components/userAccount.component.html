@@ -1,0 +1,27 @@
+<h1>User Account Page</h1>
+
+<table class="table table-list-search">
+	<thead>
+		<tr>
+		<th>User Name</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Phone</th>
+			<th>Primary Account</th>
+			<th>Savings Account</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let user of userList">
+			<td>{{user.username}}</td>
+			<td>{{user.firstName}}</td>
+			<td>{{user.lastName}}</td>
+			<td>{{user.email}}</td>
+			<td>{{user.phone}}</td>
+			<td (click)="onSelectPrimary(user.username)">{{user.primaryAccount.accountBalance}}</td>
+			<td (click)="onSelectSavings(user.username)">{{user.savingsAccount.accountBalance}}</td>
+		</tr>
+	</tbody>
+</table>   

@@ -9,9 +9,9 @@ import java.util.List;
  * Created by z00382545 on 10/20/16.
  */
 public interface TransactionService {
-    List<PrimaryTransaction> findPrimaryTransactionList();
+    List<PrimaryTransaction> findPrimaryTransactionList(String username);
 
-    List<SavingsTransaction> findSavingsTransactionList();
+    List<SavingsTransaction> findSavingsTransactionList(String username);
 
     void savePrimaryDepositTransaction(PrimaryTransaction primaryTransaction);
 
