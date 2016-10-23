@@ -11,45 +11,45 @@ public class Appointment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long appointmentId;
-    private Date appointmentDate;
-    private String appointmentLocation;
-    private String appointmentDescription;
+    private Long id;
+    private Date date;
+    private String location;
+    private String description;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Long getAppointmentId() {
-        return appointmentId;
+    public Long getId() {
+        return id;
     }
 
-    public void setAppointmentId(Long appointmentId) {
-        this.appointmentId = appointmentId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public Date getAppointmentDate() {
-        return appointmentDate;
+    public Date getDate() {
+        return date;
     }
 
-    public void setAppointmentDate(Date appointmentDate) {
-        this.appointmentDate = appointmentDate;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public String getAppointmentLocation() {
-        return appointmentLocation;
+    public String getLocation() {
+        return location;
     }
 
-    public void setAppointmentLocation(String appointmentLocation) {
-        this.appointmentLocation = appointmentLocation;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public String getAppointmentDescription() {
-        return appointmentDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setAppointmentDescription(String appointmentDescription) {
-        this.appointmentDescription = appointmentDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public User getUser() {
@@ -58,5 +58,16 @@ public class Appointment {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Appointment{" +
+                "id=" + id +
+                ", date=" + date +
+                ", location='" + location + '\'' +
+                ", description='" + description + '\'' +
+                ", user=" + user +
+                '}';
     }
 }

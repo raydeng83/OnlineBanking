@@ -18,6 +18,10 @@
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css' />
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css' />
 
+    <!--bootstrap date-time picker-->
+    <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+
     <!-- Custom CSS -->
     <!--<link href="css/scrolling-nav.css" rel="stylesheet" />-->
     <link href="/css/main.css" rel="stylesheet" />
@@ -61,6 +65,12 @@
                         <li><a th:href="@{/transfer/recipient}">Add/Edit Recipient</a></li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Apointment <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/appointment/create}">Schedule an Appointment</a></li>
+                    </ul>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Link</a></li>
@@ -90,6 +100,13 @@
     <script src="/js/bootstrap.min.js"></script>
 
     <script src="/js/jquery.easing.min.js"></script>
+
+    <!--bootstrap date-time picker-->
+    <script src="/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!--bootbox-->
+    <script src="/js/bootbox.min.js"></script>
+
 
     <!--main js-->
     <script src="/js/main.js"></script>
