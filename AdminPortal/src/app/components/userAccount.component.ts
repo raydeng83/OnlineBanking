@@ -10,6 +10,8 @@ import {UserService} from '../services/user.service';
 })
 export class UserAccountComponent{
 	userList: Object[];
+
+
 	
 	constructor(private userService: UserService, private router: Router) {
 		this.getUsers();
@@ -25,7 +27,7 @@ export class UserAccountComponent{
 	}
 
 	onSelectPrimary(username: string) {
-    	this.router.navigate(['/image-detail', this.selectedPhoto.photoId]);
+    	this.router.navigate(['/primaryTransaction', username]);
   	}	
 
 

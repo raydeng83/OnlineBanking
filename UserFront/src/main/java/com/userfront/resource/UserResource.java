@@ -1,6 +1,7 @@
 package com.userfront.resource;
 
 import com.userfront.domain.PrimaryTransaction;
+import com.userfront.domain.SavingsTransaction;
 import com.userfront.domain.User;
 import com.userfront.service.TransactionService;
 import com.userfront.service.UserService;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.security.Principal;
 import java.util.List;
 
 /**
@@ -33,9 +33,12 @@ public class UserResource {
     }
 
     @RequestMapping(value = "/user/primary/transaction", method = RequestMethod.GET)
-    public List<PrimaryTransaction> getPrimaryTransaction(@RequestParam("username") String username) {
-        User user = userService.findByUsername(username);
-
+    public List<PrimaryTransaction> getPrimaryTransactionList(@RequestParam("username") String username) {
         return transactionService.findPrimaryTransactionList(username);
+    }
+
+    @RequestMapping(value = "/user/savings/transaction", method = RequestMethod.GET)
+    public List<SavingsTransaction> getSavingsTransactionList(@RequestParam("username") String username) {
+        return transactionService.findSavingsTransactionList(username);
     }
 }

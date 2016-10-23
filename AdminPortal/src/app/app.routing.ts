@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent }  from './components/home.component';
 import { LoginComponent } from './components/login.component';
 import { UserAccountComponent } from './components/userAccount.component';
+import { PrimaryTransactionComponent } from './components/primaryTransaction.component';
 
 const appRoutes: Routes = [
   {
@@ -18,6 +19,10 @@ const appRoutes: Routes = [
   {
   	path: 'login',
   	component: LoginComponent
+  },
+  {
+    path: 'primaryTransaction/:username',
+    component: PrimaryTransactionComponent
   }
   
 ];
