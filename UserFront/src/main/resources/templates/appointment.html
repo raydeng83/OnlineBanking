@@ -24,8 +24,8 @@
                 <div class="form-group">
                     <label for="location">Pick a location:</label>
                     <select class="form-control" th:value="${appointment.location}" name="location" id="location"
-                            required="required">
-                        <option disabled="disabled" selected="selected"> -- select the location --</option>
+                            >
+                        <option disabled="disabled" selected="selected" > -- select the location --</option>
                         <option>Boston</option>
                         <option>New York</option>
                         <option>Chicago</option>
@@ -35,7 +35,7 @@
 
                 <div class="form-group">
                     <label for="description">Notes:</label>
-                    <textarea th:value="${appointment.description}" class="form-control" name="description" id="description" placeholder="Description" required="required"></textarea>
+                    <textarea th:value="${appointment.description}" class="form-control" name="description" id="description" placeholder="Description" ></textarea>
                 </div>
 
 
