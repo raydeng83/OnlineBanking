@@ -31,6 +31,8 @@ public class User implements UserDetails{
     private String email;
     private String phone;
 
+    private boolean enabled=true;
+
     @OneToOne
     private PrimaryAccount primaryAccount;
 
@@ -144,6 +146,10 @@ public class User implements UserDetails{
         this.savingsAccount = savingsAccount;
     }
 
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -187,7 +193,8 @@ public class User implements UserDetails{
 
     @Override
     public boolean isEnabled() {
-        // TODO Auto-generated method stub
-        return true;
+        return enabled;
     }
+
+
 }

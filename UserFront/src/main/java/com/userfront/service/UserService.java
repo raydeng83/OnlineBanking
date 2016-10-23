@@ -24,4 +24,8 @@ public interface UserService {
     boolean checkEmailExists(String email);
 
     List<User> findUserList();
+
+    void enableUser (String username);
+
+    void disableUser (String username);
 }

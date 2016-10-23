@@ -10,8 +10,6 @@ import {UserService} from '../services/user.service';
 })
 export class UserAccountComponent{
 	userList: Object[];
-
-
 	
 	constructor(private userService: UserService, private router: Router) {
 		this.getUsers();
@@ -33,6 +31,16 @@ export class UserAccountComponent{
   	onSelectSavings(username: string) {
     	this.router.navigate(['/savingsTransaction', username]);
   	}	
+
+  	enableUser(username: string) {
+  		this.userService.enableUser(username).subscribe();
+  		location.reload();
+  	}
+
+  	disableUser(username: string) {
+  		this.userService.disableUser(username).subscribe();
+  		location.reload();
+  	}
 
 
 }

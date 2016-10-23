@@ -104,5 +104,21 @@ public class UserServiceImpl implements UserService {
         return userDao.findAll();
     }
 
+    @Transactional
+    public void enableUser (String username) {
+        User user = findByUsername(username);
+        user.setEnabled(true);
+        userDao.save(user);
+    }
+
+    @Transactional
+    public void disableUser (String username) {
+        User user = findByUsername(username);
+        user.setEnabled(false);
+        System.out.println(user.isEnabled());
+        userDao.save(user);
+        System.out.println(username + " is disabled.");
+    }
+
 
 }
