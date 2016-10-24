@@ -5,7 +5,6 @@ import com.userfront.domain.User;
 import com.userfront.service.AppointmentService;
 import com.userfront.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.security.Principal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
