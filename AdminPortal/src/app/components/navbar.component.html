@@ -15,6 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li [style.display]="getDisplay()"><a routerLink="/userAccount" routerLinkActive="active"> User Account <span class="sr-only">(current)</span></a></li>
+        <li [style.display]="getDisplay()"><a routerLink="/appointment" routerLinkActive="active"> Appointment <span class="sr-only">(current)</span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li [style.display]="getDisplay()"><a (click)="logout()" style="cursor: pointer;">Logout</a></li>

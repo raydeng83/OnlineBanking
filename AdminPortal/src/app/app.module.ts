@@ -12,10 +12,12 @@ import { NavbarComponent } from './components/navbar.component';
 import { UserAccountComponent } from './components/userAccount.component';
 import { PrimaryTransactionComponent } from './components/primaryTransaction.component';
 import { SavingsTransactionComponent } from './components/savingsTransaction.component';
+import { AppointmentComponent } from './components/appointment.component';
 
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
+import { AppointmentService } from './services/appointment.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { UserService } from './services/user.service';
     NavbarComponent,
     UserAccountComponent,
     PrimaryTransactionComponent,
-    SavingsTransactionComponent
+    SavingsTransactionComponent,
+    AppointmentComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { UserService } from './services/user.service';
   providers: [
     CookieService,
     LoginService,
-    UserService
+    UserService,
+    AppointmentService
   ],
   bootstrap: [AppComponent]
 })

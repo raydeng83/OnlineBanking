@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login.component';
 import { UserAccountComponent } from './components/userAccount.component';
 import { PrimaryTransactionComponent } from './components/primaryTransaction.component';
 import { SavingsTransactionComponent } from './components/savingsTransaction.component';
+import { AppointmentComponent } from './components/appointment.component';
 
 
 const appRoutes: Routes = [
@@ -29,6 +30,10 @@ const appRoutes: Routes = [
   {
     path: 'savingsTransaction/:username',
     component: SavingsTransactionComponent
+  },
+  {
+    path: 'appointment',
+    component: AppointmentComponent
   }
   
 ];

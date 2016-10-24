@@ -15,6 +15,7 @@ public class Appointment {
     private Date date;
     private String location;
     private String description;
+    private boolean confirmed;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -58,6 +59,14 @@ public class Appointment {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public boolean isConfirmed() {
+        return confirmed;
+    }
+
+    public void setConfirmed(boolean confirmed) {
+        this.confirmed = confirmed;
     }
 
     @Override
