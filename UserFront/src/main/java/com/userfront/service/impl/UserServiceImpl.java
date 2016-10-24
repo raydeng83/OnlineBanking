@@ -76,6 +76,11 @@ public class UserServiceImpl implements UserService {
         return localUser;
     }
 
+    @Transactional
+    public User saveUser (User user) {
+        return userDao.save(user);
+    }
+
     public boolean checkUserExists(String username, String email){
         if (checkUsernameExists(username) || checkEmailExists(username)) {
             return true;

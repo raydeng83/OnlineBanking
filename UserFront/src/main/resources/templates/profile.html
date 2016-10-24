@@ -6,13 +6,11 @@
 <div class="container">
     <div class="row main">
         <div class="col-md-6">
-            <div class="panel-heading">
-                <div class="panel-title text-center">
-                    <h1 class="title">My Profile</h1>
-                    <hr/>
-                </div>
-            </div>
-            <form method="post" th:action="@{/signup}">
+            <h2 class="title">My Profile</h2>
+            <hr/>
+            <form method="post" th:action="@{/user/profile}">
+                <input type="hidden" name="id" th:value="${user.userId}"/>
+
                 <div class="form-group">
                     <label for="firstName">First Name</label>
                     <div class="cols-sm-10">
@@ -75,7 +73,7 @@
                 </div>
 
                 <div class="form-group ">
-                    <button type="submit" class="btn btn-primaryAccount btn-lg btn-block login-button">Change Settings
+                    <button type="submit" class="btn btn-primary btn-block ">Change Settings
                     </button>
                 </div>
 
