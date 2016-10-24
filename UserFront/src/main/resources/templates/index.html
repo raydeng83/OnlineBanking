@@ -3,10 +3,10 @@
 <head th:replace="common/header :: common-header"/>
 <body>
 <!-- Login Section -->
-<section roleId="intro" class="intro-section">
+    <img class="img-responsive" src="/images/banner.png" alt="banner"/>
     <div class="container">
-        <div class="row">
-            <div class="main-center">
+        <div class="row ">
+            <div class="main-center ">
                 <div class="bg-danger" th:if="${param.error}">
                     Invalid username and secret.
                 </div>
@@ -35,7 +35,6 @@
             </div>
         </div>
     </div>
-</section>
 
 <div th:replace="common/header :: body-bottom-scripts"/>
 
