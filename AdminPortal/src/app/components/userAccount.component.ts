@@ -3,6 +3,7 @@ import {User} from '../models/user';
 import { Router } from '@angular/router';
 import {UserService} from '../services/user.service';
 
+declare var jQuery:any;
 
 @Component({
   selector: 'user-account',

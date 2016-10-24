@@ -19,6 +19,8 @@ import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 import { AppointmentService } from './services/appointment.service';
 
+import {DataTableModule} from "angular2-datatable";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,8 @@ import { AppointmentService } from './services/appointment.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    DataTableModule
   ],
   providers: [
     CookieService,
