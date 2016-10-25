@@ -1,14 +1,15 @@
-import {Component} from '@angular/core';
-import {LoginService} from '../services/login.service';
+import { Component, OnInit } from '@angular/core';
+import {LoginService} from '../login.service';
 import { Router } from '@angular/router';
 
 @Component({
-	selector: 'navbar',
-	templateUrl: './navbar.component.html',
-	styleUrls: ['./navbar.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
-	loggedIn: boolean;
+export class NavbarComponent implements OnInit {
+
+  loggedIn: boolean;
 
 	constructor(private loginService: LoginService, private router : Router) {
 		if(localStorage.getItem('PortalAdminHasLoggedIn') == '') {
@@ -25,7 +26,7 @@ export class NavbarComponent {
 			},
 			err => console.log(err)
 			);
-		// location.reload();
+		location.reload();
 		this.router.navigate(['/login']);
 	}
 
@@ -36,4 +37,7 @@ export class NavbarComponent {
       return "";
     }
   }
+
+  ngOnInit() {}
+
 }

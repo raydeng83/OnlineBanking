@@ -1,5 +1,5 @@
   <div class="wrapper">
-    <form class="form-signin" (ngSubmit)="onSubmit()" >       
+    <form class="form-signin" (ngSubmit)="onSubmit()" [hidden]="loggedIn">       
       <h2 class="clean-font">Please login</h2>
 
       <input type="text" class="form-control" name="username" [(ngModel)]="username" placeholder="Username" name="username" required autofocus="" />
