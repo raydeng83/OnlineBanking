@@ -26,7 +26,7 @@ export class NavbarComponent {
 			err => console.log(err)
 			);
 		// location.reload();
-		this.router.navigate(['/login']);
+		this.router.navigate(['/']);
 	}
 
 	getDisplay() {

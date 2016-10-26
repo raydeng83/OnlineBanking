@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Observable}  from 'rxjs/Observable';
 import {LoginService} from '../services/login.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent {
   username: string;
   password: string;
 
-	constructor (private loginService: LoginService) {
+	constructor (private loginService: LoginService, private router: Router) {
     if(localStorage.getItem('PortalAdminHasLoggedIn') == '') {
       this.loggedIn = false;
     } else {
@@ -27,7 +28,7 @@ export class LoginComponent {
       res => {
         this.loggedIn=true;
         localStorage.setItem('PortalAdminHasLoggedIn', 'true');
-        location.reload();
+        this.router.navigate(['/']);
       },
       err => console.log(err)
     );

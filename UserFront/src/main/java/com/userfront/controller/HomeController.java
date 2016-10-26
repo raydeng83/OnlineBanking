@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.security.Principal;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -87,6 +88,7 @@ public class HomeController {
 
         model.addAttribute("primaryAccount", primaryAccount);
         model.addAttribute("savingsAccount", savingsAccount);
+
 
         return "userFront";
     }
