@@ -33,10 +33,6 @@ public class HomeController {
     @Autowired
     private RoleDao roleDao;
 
-    @Autowired
-    private AccountService accountService;
-
-
     @RequestMapping("/")
     public String home() {
         return "redirect:/index";
@@ -73,7 +69,7 @@ public class HomeController {
         } else {
 
             Set<UserRole> userRoles = new HashSet<>();
-            userRoles.add(new UserRole(user, roleDao.findByName("USER")));
+            userRoles.add(new UserRole(user, roleDao.findByName("ROLE_USER")));
             userService.createUser(user, userRoles);
 
             return "redirect:/";
